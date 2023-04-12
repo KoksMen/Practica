@@ -14,7 +14,7 @@ namespace PR5_5
 
             PracticeFiveZadanieFive pr5z5 = new PracticeFiveZadanieFive();
 
-            pr5z5.DoAction(massive, 13, massive.GetLength(0), massive.GetLength(1));
+            pr5z5.DoAction(massive, 10, massive.GetLength(0), massive.GetLength(1));
         }
     }
 
@@ -22,32 +22,21 @@ namespace PR5_5
     {
         public void DoAction(int[,] T, int A, int K, int M)
         {
-           
-            bool found = false; 
+            bool found = false;
             for (int i = 0; i < K; i++) 
             {
                 for (int j = 0; j < M; j++) 
                 {
+
                     if (T[i, j] < A) 
                     {
                         found = true;
+                        Console.WriteLine("Строка содержащая элемент, меньший A, строка {0}", j);
                         break;
                     }
                 }
-                if (found) 
-                {
-                    break;
-                }
             }
-
-            if (found)
-            {
-                Console.WriteLine("В матрице есть строка, содержащая элемент, меньший {0}", A);
-            }
-            else
-            { 
-                Console.WriteLine("В матрице нет строк, содержащих элемент, меньший {0}", A);
-            }
+            if (!found) Console.WriteLine("Нет не одной строки которая сожержит элемент, меньший А");
         }
     }
 }
