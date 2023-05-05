@@ -1,0 +1,16 @@
+﻿<Window x:Class="PR26_3.MammalDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR26_3"
+        mc:Ignorable="d"
+        Title="Mammals App - Mammal Details" Height="200" Width="400">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock x:Name="nameTextBlock" FontWeight="Bold" />
+            <TextBlock x:Name="subspeciesTextBlock" />
+            <TextBlock x:Name="lifespanTextBlock" />
+        </StackPanel>
+    </Grid>
+</Window>
