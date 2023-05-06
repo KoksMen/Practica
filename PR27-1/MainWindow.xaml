@@ -1,0 +1,34 @@
+﻿<Window x:Class="PR27_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR27_1"
+        mc:Ignorable="d"
+        Title="My WPF App" Height="350" Width="525">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Друзья">
+                <ListView>
+                    <ListViewItem>Артём</ListViewItem>
+                    <ListViewItem>Никита</ListViewItem>
+                    <ListViewItem>Ярослав</ListViewItem>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Любимые предметы">
+                <ListView>
+                    <ListViewItem>Конструирование ПО (C#)</ListViewItem>
+                    <ListViewItem>Тестирование ПО</ListViewItem>
+                    <ListViewItem>Базы данных</ListViewItem>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Любимые развлечения">
+                <ListView>
+                    <ListViewItem>Видеоигры</ListViewItem>
+                    <ListViewItem>Аниме сериалы</ListViewItem>
+                    <ListViewItem>Программирование</ListViewItem>
+                </ListView>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
