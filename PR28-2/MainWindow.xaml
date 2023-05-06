@@ -1,0 +1,28 @@
+﻿<Window x:Class="PR28_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR28_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas Background="White">
+            <!-- основа домика -->
+            <Polygon Points="50,300 50,200 200,50 350,200 350,300"
+                 Stroke="Black" StrokeThickness="5" Fill="Beige" />
+            <!-- крыша -->
+            <Polygon Points="50,200 200,50 350,200"
+                 Stroke="Black" StrokeThickness="5" Fill="Brown" />
+            <!-- окно -->
+            <Rectangle Width="50" Height="50" Canvas.Left="100" Canvas.Top="225"
+                   Stroke="Black" StrokeThickness="3" Fill="LightBlue" />
+            <!-- дверь -->
+            <Rectangle Width="70" Height="100" Canvas.Left="220" Canvas.Top="200"
+                   Stroke="Black" StrokeThickness="3" Fill="Brown" />
+            <!-- ручка двери -->
+            <Ellipse Width="10" Height="10" Canvas.Left="280" Canvas.Top="260"
+                 Stroke="Black" StrokeThickness="3" Fill="White" />
+        </Canvas>
+    </Grid>
+</Window>
