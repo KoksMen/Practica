@@ -20,7 +20,7 @@ namespace PR23_3
         private void button1_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
-            form1.pictureBox1.Image = Image.FromFile(@"C:\Users\rinsh\Pictures\Screenshots\Снимок экрана 2023-04-29 095516.png");
+            form1.pictureBox1.Image = Image.FromFile(@"C:\Users\xxkok\Pictures\Screenshot_122.png");
             form1.button1.Enabled = false;
             form1.Show();
             this.Hide();
