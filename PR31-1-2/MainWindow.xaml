@@ -1,0 +1,51 @@
+﻿<Window x:Class="PR31_1_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR31_1_2"
+        mc:Ignorable="d"
+        Title="Dish Management" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="txtDishType" Width="120" Margin="5" Text="{Binding NewDishType}" />
+            <TextBox x:Name="txtDishWeight" Width="80" Margin="5" Text="{Binding NewDishWeight}" />
+            <TextBox x:Name="txtPreparationOrder" Width="200" Margin="5" Text="{Binding NewPreparationOrder}" />
+            <TextBox x:Name="txtCaloryCount" Width="120" Margin="5" Text="{Binding NewCaloryCount}" />
+            <TextBox x:Name="txtCarbCount" Width="120" Margin="5" Text="{Binding NewCarbCount}" />
+            <Button Content="Add" Width="80" Margin="5" Command="{Binding AddCommand}" />
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Dishes}" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Dish Code" Binding="{Binding DishCode}" />
+                <DataGridTextColumn Header="Dish Type" Binding="{Binding DishType}" />
+                <DataGridTextColumn Header="Dish Weight" Binding="{Binding DishWeight}" />
+                <DataGridTextColumn Header="Preparation Order" Binding="{Binding PreparationOrder}" />
+                <DataGridTextColumn Header="Calory Count" Binding="{Binding CaloryCount}" />
+                <DataGridTextColumn Header="Carb Count" Binding="{Binding CarbCount}" />
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                    CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                    CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
