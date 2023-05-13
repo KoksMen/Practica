@@ -33,6 +33,10 @@ namespace PR32_1
             dataTable = dataSet.Tables[0];
 
             dataGridView1.DataSource = dataTable;
+            dataGridView2.DataSource = dataTable;
+            dataGridView3.DataSource = dataTable;
+
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -42,11 +46,11 @@ namespace PR32_1
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView3.SelectedRows.Count > 0)
             {
-                int RowIndex = dataGridView1.SelectedRows[0].Index;
+                int RowIndex = dataGridView3.SelectedRows[0].Index;
 
-                int rowIndex = dataGridView1.SelectedRows[0].Index;
+                int rowIndex = dataGridView3.SelectedRows[0].Index;
                 DataRow row = dataTable.Rows[rowIndex];
 
                 row["DishType"] = textBox6.Text;
@@ -71,9 +75,9 @@ namespace PR32_1
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView2.SelectedRows.Count > 0)
             {
-                dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                dataGridView2.Rows.RemoveAt(dataGridView2.SelectedRows[0].Index);
             }
 
             dataAdapter.Update(dataTable);
